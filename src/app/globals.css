@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — derived from photos: warm cream, charcoal, dusty mauve, sand */
+  --color-cream: #F5F2EE;
+  --color-cream-deep: #EDE9E3;
+  --color-sand: #D4C9BC;
+  --color-mauve: #C4A99A;
+  --color-mauve-light: #DDD0C8;
+  --color-charcoal: #1C1C1A;
+  --color-charcoal-mid: #3A3834;
+  --color-stone: #6B6560;
+  --color-pebble: #A09890;
+  --color-off-white: #FAF8F5;
+  --color-white: #FFFFFF;
+
+  /* Legacy aliases kept for backwards-compat */
+  --color-baby-pink: #DDD0C8;
+  --color-dusty-pink: #C4A99A;
+  --color-soft-pink: #EDE9E3;
+  --color-light-grey: #D4C9BC;
+  --color-soft-grey: #A09890;
+  --color-medium-grey: #6B6560;
+
+  /* Typography — matching the rounded modern wordmark */
+  --font-sans: "DM Sans", var(--font-inter), system-ui, sans-serif;
+  --font-display: "DM Sans", var(--font-inter), system-ui, sans-serif;
+
+  --radius-soft: 1rem;
+  --radius-card: 1.25rem;
+  --radius-pill: 999px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #1C1C1A;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+
+  [dir="rtl"] body {
+    letter-spacing: 0;
+  }
+
+  ::selection {
+    background-color: rgba(196, 169, 154, 0.35);
+    color: #1C1C1A;
+  }
+
+  :focus-visible {
+    outline: 2px solid #C4A99A;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-padding {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
+  }
+
+  .container-rube {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 1280px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-rube {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-rube {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  /* Wordmark style — rounded, lowercase, bold */
+  .wordmark {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.03em;
+    text-transform: lowercase;
+    line-height: 1;
+  }
+
+  .heading-display {
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
+
+  .label-caps {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .image-premium {
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .card-hover {
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px rgba(28, 28, 26, 0.1);
+  }
+}
+
+/* Dark mode */
+.dark body {
+  background-color: #161614;
+  color: #F0EDE9;
+}
+
+.dark .bg-surface {
+  background-color: #1E1E1B;
+}
+
+.dark .border-soft {
+  border-color: #2E2E2A;
+}
