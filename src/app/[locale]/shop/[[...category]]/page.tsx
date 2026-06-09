@@ -33,6 +33,25 @@ export async function generateMetadata({
   return { title };
 }
 
+export async function generateStaticParams() {
+  const locales: Locale[] = ["en", "ar"];
+  const paths: Array<{ locale: string; category: string[] }> = [];
+
+  // Add shop root paths
+  locales.forEach((locale) => {
+    paths.push({ locale, category: [] });
+  });
+
+  // Add category paths
+  locales.forEach((locale) => {
+    validCategories.forEach((cat) => {
+      paths.push({ locale, category: [cat] });
+    });
+  });
+
+  return paths;
+}
+
 export default async function ShopPage({
   params,
 }: { params: Promise<{ locale: string; category?: string[] }> }) {
