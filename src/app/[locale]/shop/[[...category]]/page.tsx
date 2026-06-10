@@ -123,14 +123,9 @@ export default async function ShopPage({
         {hasMore && (
           <div className="mt-16 text-center" id="view-more">
             <FadeIn>
-              <div className="inline-block rounded-full bg-soft-pink px-8 py-4 backdrop-blur-sm border border-dusty-pink/30">
-                <p className="text-sm text-charcoal mb-4">
-                  Viewing {productList.length} of {allProducts.length} items
-                </p>
-                <button className="w-full px-6 py-3 rounded-full bg-charcoal text-off-white font-semibold label-caps transition hover:bg-charcoal/90">
-                  View All {allProducts.length} Items
-                </button>
-              </div>
+              <p className="text-sm text-stone">
+                Viewing {productList.length} of {allProducts.length} items
+              </p>
             </FadeIn>
           </div>
         )}
