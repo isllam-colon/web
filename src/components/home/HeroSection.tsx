@@ -46,9 +46,6 @@ export function HeroSection({ locale, dict }: HeroSectionProps) {
                 >
                   {dict.common.shopNow}
                 </Button>
-                <Button href={`/${locale}/about`} locale={locale} variant="ghost">
-                  {dict.common.learnMore}
-                </Button>
               </div>
             </div>
           </FadeIn>
