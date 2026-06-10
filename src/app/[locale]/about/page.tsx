@@ -104,7 +104,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                   <div className={`absolute -inset-3 ${v.color} rounded-2xl opacity-0 group-hover:opacity-10 transition duration-300 blur`} />
                   
                   <div className="relative rounded-2xl bg-off-white p-8 border border-light-grey/50 hover:border-dusty-pink/30 transition h-full">
-                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full ${v.color} text-off-white font-bold text-lg mb-4`}>
+                    <div className="flex items-center justify-center mb-4 text-2xl">
                       {v.icon}
                     </div>
                     <h3 className="font-bold text-charcoal text-lg tracking-tight mb-3">{v.title}</h3>
