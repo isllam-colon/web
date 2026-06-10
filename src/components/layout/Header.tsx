@@ -82,7 +82,7 @@ export function Header({ locale, dict }: HeaderProps) {
             <Menu className="h-5 w-5" />
           </button>
 
-          {/* Wordmark / Logo — uses /logo.svg in `public/` with text fallback */}
+          {/* Wordmark / Logo — uses /photos/logo.svg with text fallback */}
           <Link
             href={`/${locale}`}
             aria-label="Home"
@@ -93,7 +93,7 @@ export function Header({ locale, dict }: HeaderProps) {
           >
             {logoLoaded ? (
               <img
-                src="/logo.svg"
+                src="/photos/logo.svg"
                 alt="RUBE"
                 className={cn("h-6 w-auto", dark ? "invert" : "")}
                 onError={() => setLogoLoaded(false)}
