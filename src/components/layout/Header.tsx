@@ -28,6 +28,7 @@ const navLinks = (locale: string) => [
 export function Header({ locale, dict }: HeaderProps) {
   const [scrolled, setScrolled]   = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [logoLoaded, setLogoLoaded] = useState(true);
   const pathname  = usePathname();
   const openCart  = useCartStore((s) => s.openCart);
   const itemCount = useCartStore((s) => s.itemCount());
@@ -81,15 +82,25 @@ export function Header({ locale, dict }: HeaderProps) {
             <Menu className="h-5 w-5" />
           </button>
 
-          {/* Wordmark — lowercase "rube" */}
+          {/* Wordmark / Logo — uses /logo.svg in `public/` with text fallback */}
           <Link
             href={`/${locale}`}
+            aria-label="Home"
             className={cn(
               "wordmark absolute start-1/2 -translate-x-1/2 lg:static lg:translate-x-0 transition-colors",
               dark ? "text-off-white" : "text-charcoal"
             )}
           >
-            rube
+            {logoLoaded ? (
+              <img
+                src="/logo.svg"
+                alt="RUBE"
+                className={cn("h-6 w-auto", dark ? "invert" : "")}
+                onError={() => setLogoLoaded(false)}
+              />
+            ) : (
+              <span className="font-bold">rube</span>
+            )}
           </Link>
 
           {/* Desktop nav */}
