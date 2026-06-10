@@ -2,6 +2,7 @@ import type { Dictionary, Locale } from "@/types";
 import Link from "next/link";
 import { NewsletterForm } from "@/components/home/NewsletterForm";
 import { Instagram } from "lucide-react";
+import { useState } from "react";
 
 interface FooterProps {
   locale: Locale;
@@ -9,6 +10,8 @@ interface FooterProps {
 }
 
 export function Footer({ locale, dict }: FooterProps) {
+  const [logoLoaded, setLogoLoaded] = useState(true);
+  
   const shopLinks = [
     { href: `/${locale}/shop`, label: dict.nav.shop },
     { href: `/${locale}/shop/new-arrivals`, label: dict.nav.newArrivals },
@@ -42,7 +45,16 @@ export function Footer({ locale, dict }: FooterProps) {
               href={`/${locale}`}
               className="wordmark text-off-white block"
             >
-              rube
+              {logoLoaded ? (
+                <img
+                  src="/photos/white5.png"
+                  alt="RUBE"
+                  className="h-6 w-auto"
+                  onError={() => setLogoLoaded(false)}
+                />
+              ) : (
+                <span className="font-bold">rube</span>
+              )}
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-pebble">
               {dict.footer.tagline}
