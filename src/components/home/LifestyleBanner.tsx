@@ -36,14 +36,6 @@ export function LifestyleBanner({ locale, dict }: LifestyleBannerProps) {
               <p className="mt-4 text-sm leading-relaxed text-off-white/85 sm:text-base max-w-xs">
                 {home.lifestyleSubtitle}
               </p>
-              <Button
-                href="/shop/sets"
-                locale={locale}
-                variant="secondary"
-                className="mt-8"
-              >
-                {dict.common.learnMore}
-              </Button>
             </FadeIn>
           </div>
         </div>
