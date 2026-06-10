@@ -51,7 +51,7 @@ export function Footer({ locale, dict }: FooterProps) {
                 <img
                   src="/photos/white5.png"
                   alt="RUBE"
-                  className="h-12 w-auto"
+                  className="h-20 w-auto"
                   onError={() => setLogoLoaded(false)}
                 />
               ) : (

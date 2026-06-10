@@ -95,7 +95,7 @@ export function Header({ locale, dict }: HeaderProps) {
               <img
                 src={dark ? "/photos/white5.png" : "/photos/blck6.png"}
                 alt="RUBE"
-                className="h-12 w-auto"
+                className="h-20 w-auto"
                 onError={() => setLogoLoaded(false)}
               />
             ) : (
