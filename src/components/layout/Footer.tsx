@@ -1,3 +1,5 @@
+"use client";
+
 import type { Dictionary, Locale } from "@/types";
 import Link from "next/link";
 import { NewsletterForm } from "@/components/home/NewsletterForm";
