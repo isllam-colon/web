@@ -1,0 +1,33 @@
+{% comment %}
+  Home page section. Phase 1 scaffold: keep structure minimal.
+  Visual parity will be ensured after migrating each block.
+{% endcomment %}
+
+<div>
+  {%- comment -%} This placeholder keeps the theme from rendering blank while we migrate blocks one-by-one. {%- endcomment -%}
+  {% if section.settings.enable_placeholder %}
+    <div class="container-rube py-20">
+      <h1>RUBE</h1>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "RUBE Home",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_placeholder",
+      "label": "Enable placeholder content (for development only)",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "RUBE Home"
+    }
+  ]
+}
+{% endschema %}
+

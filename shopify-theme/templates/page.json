@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "rube-page",
+      "settings": {
+        "heading": ""
+      }
+    }
+  },
+  "order": ["main"]
+}
+

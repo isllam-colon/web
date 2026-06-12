@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code | default: 'en' }}" dir="{{ settings.locale_dir | default: 'ltr' }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_off_white | default: '#FAF8F6' }}">
+
+    <title>
+      {{ page_title }}{% if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif %}
+      {% if current_page != 1 %} &ndash; Page {{ current_page }}{% endif %}
+    </title>
+
+    {{ content_for_header }}
+
+    {{ 'style.css' | asset_url | stylesheet_tag }}
+  </head>
+
+  <body>
+    <a class="skip-to-content" href="#MainContent">Skip to content</a>
+
+    {{ content_for_layout }}
+
+    {{ content_for_footer }}
+
+    <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  </body>
+</html>
+

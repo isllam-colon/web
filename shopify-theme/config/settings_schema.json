@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.org/theme.json",
+  "name": "RUBE",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Global"
+    },
+    {
+      "type": "text",
+      "id": "locale_dir",
+      "label": "Page direction (dir)",
+      "default": "ltr"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "color_charcoal",
+      "label": "Charcoal",
+      "default": "#2B2B2B"
+    },
+    {
+      "type": "color",
+      "id": "color_dusty_pink",
+      "label": "Dusty Pink",
+      "default": "#DDBBC5"
+    },
+    {
+      "type": "color",
+      "id": "color_baby_pink",
+      "label": "Baby Pink",
+      "default": "#F1DDE2"
+    },
+    {
+      "type": "color",
+      "id": "color_off_white",
+      "label": "Off White",
+      "default": "#FAF8F6"
+    }
+  ]
+}
+
