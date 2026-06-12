@@ -1,0 +1,40 @@
+{% comment %}Collection page scaffold.{% endcomment %}
+
+<div class="container-rube py-10">
+  <h1>{{ collection.title }}</h1>
+  <p>{{ collection.description }}</p>
+
+  <div class="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4">
+    {% for product in collection.products limit: section.settings.limit %}
+      <div>
+        <a href="{{ product.url }}">
+          {{ product.featured_image | image_url: width: 600 | image_tag: loading: 'lazy', alt: product.title }}
+          <div>{{ product.title }}</div>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "RUBE Collection",
+  "settings": [
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Products to show",
+      "min": 4,
+      "max": 24,
+      "step": 4,
+      "default": 12
+    }
+  ],
+  "presets": [
+    {
+      "name": "RUBE Collection"
+    }
+  ]
+}
+{% endschema %}
+

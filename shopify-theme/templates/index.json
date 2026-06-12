@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "rube-home",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
+

@@ -1,0 +1,10 @@
+{
+  "sections": {
+    "main": {
+      "type": "rube-collection",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}
+
